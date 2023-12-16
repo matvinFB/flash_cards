@@ -1,4 +1,5 @@
 import 'package:mobx/mobx.dart';
+
 part 'flahscard.viewmodel.g.dart';
 
 class FlashCardViewModel = _FlashCardViewModelBase with _$FlashCardViewModel;
@@ -29,7 +30,7 @@ abstract class _FlashCardViewModelBase with Store {
   double get vericallAngle => _verticalAngle;
 
   double _easeDelta(double delta) {
-    double easeVal = (1+(0.35 * _verticalAngle)).abs();
+    double easeVal = (1 + (0.45 * _verticalAngle)).abs();
     return delta / (easeVal == 0 ? 1 : easeVal);
   }
 

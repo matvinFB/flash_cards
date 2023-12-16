@@ -145,6 +145,17 @@ mixin _$FlashCardViewModel on _FlashCardViewModelBase, Store {
   }
 
   @override
+  void setVerticaltalHeight(double newHeight) {
+    final _$actionInfo = _$_FlashCardViewModelBaseActionController.startAction(
+        name: '_FlashCardViewModelBase.setVerticaltalHeight');
+    try {
+      return super.setVerticaltalHeight(newHeight);
+    } finally {
+      _$_FlashCardViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 horizontalAngle: ${horizontalAngle},
