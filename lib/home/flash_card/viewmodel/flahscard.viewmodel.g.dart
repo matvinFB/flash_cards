@@ -23,19 +23,19 @@ mixin _$FlashCardViewModel on _FlashCardViewModelBase, Store {
       (_$isFlippedComputed ??= Computed<bool>(() => super.isFlipped,
               name: '_FlashCardViewModelBase.isFlipped'))
           .value;
-  Computed<double>? _$vericallAngleComputed;
+  Computed<double>? _$verticalAngleComputed;
 
   @override
-  double get vericallAngle =>
-      (_$vericallAngleComputed ??= Computed<double>(() => super.vericallAngle,
-              name: '_FlashCardViewModelBase.vericallAngle'))
+  double get verticalAngle =>
+      (_$verticalAngleComputed ??= Computed<double>(() => super.verticalAngle,
+              name: '_FlashCardViewModelBase.verticalAngle'))
           .value;
-  Computed<double>? _$vericalHeightComputed;
+  Computed<double>? _$verticalHeightComputed;
 
   @override
-  double get vericalHeight =>
-      (_$vericalHeightComputed ??= Computed<double>(() => super.vericalHeight,
-              name: '_FlashCardViewModelBase.vericalHeight'))
+  double get verticalHeight =>
+      (_$verticalHeightComputed ??= Computed<double>(() => super.verticalHeight,
+              name: '_FlashCardViewModelBase.verticalHeight'))
           .value;
 
   late final _$_horizontalAngleAtom =
@@ -112,33 +112,44 @@ mixin _$FlashCardViewModel on _FlashCardViewModelBase, Store {
   }
 
   @override
-  void incrementVerticaltalAngle(double delta) {
+  void incrementVerticalAngle(double delta) {
     final _$actionInfo = _$_FlashCardViewModelBaseActionController.startAction(
-        name: '_FlashCardViewModelBase.incrementVerticaltalAngle');
+        name: '_FlashCardViewModelBase.incrementVerticalAngle');
     try {
-      return super.incrementVerticaltalAngle(delta);
+      return super.incrementVerticalAngle(delta);
     } finally {
       _$_FlashCardViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void setVerticallAngle(double newAngle) {
+  void setVerticalAngle(double newAngle) {
     final _$actionInfo = _$_FlashCardViewModelBaseActionController.startAction(
-        name: '_FlashCardViewModelBase.setVerticallAngle');
+        name: '_FlashCardViewModelBase.setVerticalAngle');
     try {
-      return super.setVerticallAngle(newAngle);
+      return super.setVerticalAngle(newAngle);
     } finally {
       _$_FlashCardViewModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  void incrementVerticaltalHeight(double delta) {
+  void incrementVerticalHeight(double delta) {
     final _$actionInfo = _$_FlashCardViewModelBaseActionController.startAction(
-        name: '_FlashCardViewModelBase.incrementVerticaltalHeight');
+        name: '_FlashCardViewModelBase.incrementVerticalHeight');
     try {
-      return super.incrementVerticaltalHeight(delta);
+      return super.incrementVerticalHeight(delta);
+    } finally {
+      _$_FlashCardViewModelBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void setVerticalHeight(double newHeight) {
+    final _$actionInfo = _$_FlashCardViewModelBaseActionController.startAction(
+        name: '_FlashCardViewModelBase.setVerticalHeight');
+    try {
+      return super.setVerticalHeight(newHeight);
     } finally {
       _$_FlashCardViewModelBaseActionController.endAction(_$actionInfo);
     }
@@ -149,8 +160,8 @@ mixin _$FlashCardViewModel on _FlashCardViewModelBase, Store {
     return '''
 horizontalAngle: ${horizontalAngle},
 isFlipped: ${isFlipped},
-vericallAngle: ${vericallAngle},
-vericalHeight: ${vericalHeight}
+verticalAngle: ${verticalAngle},
+verticalHeight: ${verticalHeight}
     ''';
   }
 }
