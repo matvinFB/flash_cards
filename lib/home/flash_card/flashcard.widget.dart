@@ -47,28 +47,28 @@ class FlashCard extends StatelessWidget {
               ? 180
               : 0),
       onVerticalDragUpdate: (details) {
-        controller.incrementVerticaltalAngle(details.delta.dy);
-        controller.incrementVerticaltalHeight(details.delta.dy);
+        controller.incrementVerticalAngle(details.delta.dy);
+        controller.incrementVerticalHeight(details.delta.dy);
       },
       onVerticalDragEnd: (details) {
-        if (controller.vericalHeight > 200 && controller.vericalHeight > 0) {
+        if (controller.verticalHeight > 200 && controller.verticalHeight > 0) {
           viewModelController.markAsForgotten();
           pickNewCardColor();
         }
-        if (controller.vericalHeight < -200 && controller.vericalHeight < 0) {
+        if (controller.verticalHeight < -200 && controller.verticalHeight < 0) {
           viewModelController.markAsRemembered();
           pickNewCardColor();
         }
-        controller.setVerticallAngle(0);
-        controller.setVerticaltalHeight(0);
+        controller.setVerticalAngle(0);
+        controller.setVerticalHeight(0);
       },
       child: Observer(builder: (context) {
         return Transform(
           transform: Matrix4.identity()
             ..setEntry(3, 2, 0.0002)
             ..rotateY(controller.horizontalAngle * math.pi / 180)
-            ..rotateX(controller.vericallAngle * math.pi / 180)
-            ..translate(0.0, controller.vericalHeight, 0.0),
+            ..rotateX(controller.verticalAngle * math.pi / 180)
+            ..translate(0.0, controller.verticalHeight, 0.0),
           alignment: Alignment.center,
           child: Observer(builder: (context) {
             return Container(
