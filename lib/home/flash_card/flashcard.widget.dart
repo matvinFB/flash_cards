@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -47,6 +48,7 @@ class FlashCard extends StatelessWidget {
               ? 180
               : 0),
       onVerticalDragUpdate: (details) {
+        dev.log(details.delta.dy.toString());
         controller.incrementVerticalAngle(details.delta.dy);
         controller.incrementVerticalHeight(details.delta.dy);
       },
@@ -67,7 +69,8 @@ class FlashCard extends StatelessWidget {
           transform: Matrix4.identity()
             ..setEntry(3, 2, 0.0002)
             ..rotateY(controller.horizontalAngle * math.pi / 180)
-            ..rotateX(controller.verticalAngle * math.pi / 180)
+            ..rotateX((controller.verticalAngle * math.pi / 180) *
+                (controller.isFlipped ? -1 : 1))
             ..translate(0.0, controller.verticalHeight, 0.0),
           alignment: Alignment.center,
           child: Observer(builder: (context) {
