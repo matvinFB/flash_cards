@@ -1,4 +1,4 @@
-import 'dart:developer' as dev;
+
 import 'dart:math';
 
 import 'package:flash_app/models/gesture.model.dart';
@@ -7,7 +7,6 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseService {
   static Future<int?> insertGesture(Gesture gesture, String deviceID) async {
-    dev.log(gesture.start.toIso8601String());
     final SupabaseClient supabase = GetIt.I.get<SupabaseClient>();
     final List<Map<String, dynamic>> gestureResponse =
         await supabase.from('Gesture').insert([
