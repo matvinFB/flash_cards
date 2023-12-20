@@ -67,7 +67,8 @@ class FlashCard extends StatelessWidget {
           transform: Matrix4.identity()
             ..setEntry(3, 2, 0.0002)
             ..rotateY(controller.horizontalAngle * math.pi / 180)
-            ..rotateX(controller.verticalAngle * math.pi / 180)
+            ..rotateX((controller.verticalAngle * math.pi / 180) *
+                (controller.isFlipped ? -1 : 1))
             ..translate(0.0, controller.verticalHeight, 0.0),
           alignment: Alignment.center,
           child: Observer(builder: (context) {
