@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:developer' as dev;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -48,7 +47,6 @@ class FlashCard extends StatelessWidget {
               ? 180
               : 0),
       onVerticalDragUpdate: (details) {
-        dev.log(details.delta.dy.toString());
         controller.incrementVerticalAngle(details.delta.dy);
         controller.incrementVerticalHeight(details.delta.dy);
       },
