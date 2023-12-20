@@ -26,7 +26,7 @@ class SupabaseService {
   static insertPoints(List<Point> trajectory, int gestureID) async{
     final SupabaseClient supabase = GetIt.I.get<SupabaseClient>();
 
-    final ans = await supabase.from('Points').insert(trajectory
+    await supabase.from('Points').insert(trajectory
         .map((e) =>
             {'gestureID': gestureID, 'x_coordinate': e.x, 'y_coordinate': e.y})
         .toList());
