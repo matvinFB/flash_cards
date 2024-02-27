@@ -3,8 +3,9 @@ import 'dart:math';
 import 'package:flash_app/models/gesture.model.dart';
 import 'package:flutter/material.dart';
 
-import '../services/device_info/device_info.service.dart';
-import '../services/supabase/supabase.service.dart';
+import '../../services/device_info/device_info.service.dart';
+import '../../services/supabase/supabase.service.dart';
+
 
 class GesturesRepository {
   Gesture? currentGesture;

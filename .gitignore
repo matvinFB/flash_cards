@@ -11,6 +11,7 @@
 migrate_working_dir/
 dart_define.json
 pubspec.lock
+*.g.dart
 
 # IntelliJ related
 *.iml

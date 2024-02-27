@@ -5,6 +5,9 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'home/home.view.dart';
 import 'home/viewmodel/home.viewmodel.dart';
+import 'login/login.view.dart';
+import 'login/viewmodel/login.viewmodel.dart';
+import 'repositories/auth_repo/auth.repo.dart';
 
 void main() {
   GetIt getIt = GetIt.instance;
@@ -19,6 +22,9 @@ void main() {
       SUPABASE_URL,
       SUPABASE_CLIENT_KEY,
     ));
+    getIt.registerLazySingleton<LoginViewmodel>(() => LoginViewmodel());
+    getIt.registerLazySingleton<AuthRepo>(() => AuthRepo());
+    
   }
   runApp(const MyApp());
 }
@@ -32,10 +38,17 @@ class MyApp extends StatelessWidget {
       title: 'Flash Card App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey.shade600),
         useMaterial3: true,
+        textSelectionTheme: TextSelectionThemeData(
+        cursorColor: Colors.black,
+        selectionColor: Colors.blueGrey.shade200,
+        selectionHandleColor: Colors.black,
+        ),
+        
+
       ),
-      home: Home(),
+      home: const LoginScreen()
     );
   }
 }
