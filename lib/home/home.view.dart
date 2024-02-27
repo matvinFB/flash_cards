@@ -1,9 +1,10 @@
-import 'package:flash_app/gestures_repo/gestures.repo.dart';
 import 'package:flash_app/home/flash_card/flashcard.widget.dart';
 import 'package:flash_app/home/viewmodel/home.viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
+
+import '../repositories/gestures_repo/gestures.repo.dart';
 
 class Home extends StatelessWidget {
   final HomeViewModel controller = GetIt.I.get<HomeViewModel>();
