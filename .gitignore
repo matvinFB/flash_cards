@@ -9,6 +9,9 @@
 .history
 .svn/
 migrate_working_dir/
+dart_define.json
+pubspec.lock
+*.g.dart
 
 # IntelliJ related
 *.iml
@@ -41,3 +44,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+pubspec.lock
+pubspec.lock
+pubspec.lock
+linux/flutter/generated_plugins.cmake
+.vscode/launch.json
+.vscode/launch.json

@@ -8,11 +8,9 @@
             "name": "Flash Card (debug)",
             "request": "launch",
             "type": "dart",
-            "toolArgs": [
-                "--dart-define",
-                "MY_VAR=MY_VALUE",
-                "--dart-define",
-                "MY_OTHER_VAR=MY_OTHER_VALUE"
+            "args": [
+                "--dart-define-from-file",
+                "dart_define.json"
             ]
         },
     ]
