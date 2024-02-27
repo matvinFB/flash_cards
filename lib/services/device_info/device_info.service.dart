@@ -7,10 +7,13 @@ class DeviceInfo {
   /// Returns the device ID as a [String] or `null` if the ID cannot be retrieved.
   static Future<String?> getUniqueDeviceID() async {
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+
     if (Platform.isAndroid) {
       return (await deviceInfo.androidInfo).id;
     } else if (Platform.isIOS) {
       return (await deviceInfo.iosInfo).identifierForVendor;
+    }else if (Platform.isLinux) {
+      return (await deviceInfo.linuxInfo).machineId;
     }
     return null;
   }
