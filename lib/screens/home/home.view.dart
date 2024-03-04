@@ -14,19 +14,19 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Listener(
-          onPointerDown: (event) =>
-              gesturesRepository.startGesture(DateTime.now(), event.position),
-          onPointerMove: (event) =>
-              gesturesRepository.addPointToGesture(event.position),
-          onPointerUp: (event) =>
-              gesturesRepository.finishGesture(DateTime.now(), event.position),
-          child: Scaffold(
-            backgroundColor: Colors.white,
-            body: SafeArea(
-              child: Observer(
+    return SafeArea(
+      child: Stack(
+        children: [
+          Listener(
+            onPointerDown: (event) =>
+                gesturesRepository.startGesture(DateTime.now(), event.position),
+            onPointerMove: (event) =>
+                gesturesRepository.addPointToGesture(event.position),
+            onPointerUp: (event) =>
+                gesturesRepository.finishGesture(DateTime.now(), event.position),
+            child: Scaffold(
+              backgroundColor: Colors.white,
+              body: Observer(
                 builder: (context) {
                   return Stack(
                     children: [
@@ -46,20 +46,20 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-        ),
-              Positioned(
-                top: 16,
-                right: 24,
-                child: IconButton(
-                            onPressed: () {
-                final loginScreenViewmodel = GetIt.I.get<LoginViewmodel>();
-                loginScreenViewmodel
-                    .logout()
-                    .then((value) => Navigator.of(context).pop());
-                            },
-                            icon: const Icon(Icons.logout)),
-              ),
-      ],
+                Positioned(
+                  top: 16,
+                  right: 24,
+                  child: IconButton(
+                              onPressed: () {
+                  final loginScreenViewmodel = GetIt.I.get<LoginViewmodel>();
+                  loginScreenViewmodel
+                      .logout()
+                      .then((value) => Navigator.of(context).pop());
+                              },
+                              icon: const Icon(Icons.logout)),
+                ),
+        ],
+      ),
     );
   }
 }
