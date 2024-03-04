@@ -1,26 +1,27 @@
+import 'package:flash_app/screens/login/login.view.dart';
 import 'package:flash_app/services/keys_service/keys.service.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import 'home/home.view.dart';
-import 'home/viewmodel/home.viewmodel.dart';
-import 'login/login.view.dart';
-import 'login/viewmodel/login.viewmodel.dart';
+
+
 import 'repositories/auth_repo/auth.repo.dart';
+import 'screens/home/viewmodel/home.viewmodel.dart';
+import 'screens/login/viewmodel/login.viewmodel.dart';
 
 void main() {
   GetIt getIt = GetIt.instance;
 
   getIt.registerSingleton<HomeViewModel>(HomeViewModel());
 
-  final SUPABASE_URL = KeysService.getSupabaseURL();
-  final SUPABASE_CLIENT_KEY = KeysService.getSupabaseClientKey();
+  final supabaseUrl = KeysService.getSupabaseURL();
+  final supabaseClientKey = KeysService.getSupabaseClientKey();
 
-  if (SUPABASE_URL != null && SUPABASE_CLIENT_KEY != null) {
+  if (supabaseUrl != null && supabaseClientKey != null) {
     getIt.registerSingleton<SupabaseClient>(SupabaseClient(
-      SUPABASE_URL,
-      SUPABASE_CLIENT_KEY,
+      supabaseUrl,
+      supabaseClientKey,
     ));
     getIt.registerLazySingleton<LoginViewmodel>(() => LoginViewmodel());
     getIt.registerLazySingleton<AuthRepo>(() => AuthRepo());
@@ -45,8 +46,6 @@ class MyApp extends StatelessWidget {
         selectionColor: Colors.blueGrey.shade200,
         selectionHandleColor: Colors.black,
         ),
-        
-
       ),
       home: const LoginScreen()
     );

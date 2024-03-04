@@ -30,7 +30,7 @@ abstract class _HomeViewModelBase with Store {
   markAsForgotten() {
     var a = cardsList.first;
     cardsList.removeAt(0);
-    cardsList.insert(cardsList.length, a);
+    cardsList.insert(cardsList.length~/10, a);
     log('Dislike');
   }
 
