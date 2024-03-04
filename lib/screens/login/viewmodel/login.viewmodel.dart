@@ -50,4 +50,12 @@ abstract class _LoginViewmodelBase with Store {
     _waitingLogin = false;
     return response;
   }
+
+  Future<bool> logout() async {
+    _waitingLogin = true;
+    AuthRepo authRepo = GetIt.I.get<AuthRepo>();
+    bool response = await authRepo.login(email: _email, password: _password);
+    _waitingLogin = false;
+    return response;
+  }
 }
