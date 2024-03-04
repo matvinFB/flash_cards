@@ -1,8 +1,9 @@
-import 'package:flash_app/services/supabase/supabase.service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../repositories/auth_repo/auth.repo.dart';
+import '../../../repositories/auth_repo/auth.repo.dart';
+
+
 part 'login.viewmodel.g.dart';
 
 class LoginViewmodel = _LoginViewmodelBase with _$LoginViewmodel;

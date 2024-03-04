@@ -40,6 +40,7 @@ class FlashCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onHorizontalDragUpdate: (details) =>
           controller.incrementHorizontalAngle(details.delta.dx),
       onHorizontalDragEnd: (details) => controller.setHorizontalAngle(
@@ -51,11 +52,11 @@ class FlashCard extends StatelessWidget {
         controller.incrementVerticalHeight(details.delta.dy);
       },
       onVerticalDragEnd: (details) {
-        if (controller.verticalHeight > 200 && controller.verticalHeight > 0) {
+        if (controller.verticalHeight > 80 && controller.verticalHeight > 0) {
           viewModelController.markAsForgotten();
           pickNewCardColor();
         }
-        if (controller.verticalHeight < -200 && controller.verticalHeight < 0) {
+        if (controller.verticalHeight < -80 && controller.verticalHeight < 0) {
           viewModelController.markAsRemembered();
           pickNewCardColor();
         }
@@ -72,33 +73,36 @@ class FlashCard extends StatelessWidget {
             ..translate(0.0, controller.verticalHeight, 0.0),
           alignment: Alignment.center,
           child: Observer(builder: (context) {
-            return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-              decoration: BoxDecoration(
-                color: cardColors[isTopCard
-                    ? viewModelController.topCardColorIndex
-                    : viewModelController.secondCardColorIndex],
-                border: Border.all(
-                  width: 1,
-                  color: const Color.fromARGB(255, 207, 207, 207),
-                ),
-                borderRadius: BorderRadius.circular(16),
-              ),
+            return Center(
               child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                height: (MediaQuery.of(context).size.width-48) * 1.7,
                 decoration: BoxDecoration(
-                    color: cardColors[isTopCard
-                        ? viewModelController.topCardColorIndex
-                        : viewModelController.secondCardColorIndex],
-                    border: Border.all(width: 5, color: Colors.white),
-                    borderRadius: BorderRadius.circular(4)),
-                child: Center(
-                  child: Transform.flip(
-                    flipX: controller.isFlipped,
-                    child: Text(
-                      controller.isFlipped ? backText : frontText,
-                      style: const TextStyle(
-                        fontSize: 28,
+                  color: cardColors[isTopCard
+                      ? viewModelController.topCardColorIndex
+                      : viewModelController.secondCardColorIndex],
+                  border: Border.all(
+                    width: 1,
+                    color: const Color.fromARGB(255, 207, 207, 207),
+                  ),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: cardColors[isTopCard
+                          ? viewModelController.topCardColorIndex
+                          : viewModelController.secondCardColorIndex],
+                      border: Border.all(width: 5, color: Colors.white),
+                      borderRadius: BorderRadius.circular(4)),
+                  child: Center(
+                    child: Transform.flip(
+                      flipX: controller.isFlipped,
+                      child: Text(
+                        controller.isFlipped ? backText : frontText,
+                        style: const TextStyle(
+                          fontSize: 28,
+                        ),
                       ),
                     ),
                   ),
