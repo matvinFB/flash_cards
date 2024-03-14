@@ -11,7 +11,7 @@ class GestureCard extends StatelessWidget {
     return Container(
       height: 64,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: Colors.grey.shade300, width: 1),
