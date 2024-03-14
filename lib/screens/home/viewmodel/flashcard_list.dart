@@ -94,4 +94,4 @@ final ENGLISH_FLASHCARD = [
   FlashCardModel(frontText: "Go", backText: "Ir"),
   FlashCardModel(frontText: "Had", backText: "Tinha"),
   FlashCardModel(frontText: "Have", backText: "Ter"),
-];
+]..shuffle();

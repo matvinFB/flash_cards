@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
-import '../home/home.view.dart';
 import 'viewmodel/login.viewmodel.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -93,7 +92,7 @@ class LoginScreen extends StatelessWidget {
                         if (value) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => InfoScreen(),
+                              builder: (context) => const InfoScreen(),
                             ),
                           );
                         }

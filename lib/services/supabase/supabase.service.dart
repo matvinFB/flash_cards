@@ -21,7 +21,6 @@ class SupabaseService {
         }
       ]).select();
     } catch (e) {
-      print(e);
       return null;
     }
 
@@ -42,7 +41,7 @@ class SupabaseService {
               })
           .toList());
     } catch (e) {
-      print(e);
+      return;
     }
   }
 
