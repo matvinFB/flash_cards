@@ -3,20 +3,14 @@ import 'dart:developer';
 import 'package:mobx/mobx.dart';
 
 import '../flash_card/model/flashcard.model.dart';
+import 'flashcard_list.dart';
 part 'home.viewmodel.g.dart';
 
 class HomeViewModel = _HomeViewModelBase with _$HomeViewModel;
 
 abstract class _HomeViewModelBase with Store {
   @observable
-  ObservableList<FlashCardModel> cardsList = ObservableList.of([
-    FlashCardModel(frontText: "Carta", backText: "Card"),
-    FlashCardModel(frontText: "Computador", backText: "computer"),
-    FlashCardModel(frontText: "Teclado", backText: "Keyboard"),
-    FlashCardModel(frontText: "Tela", backText: "Display"),
-    FlashCardModel(frontText: "Caneta", backText: "Pen"),
-    FlashCardModel(frontText: "1", backText: "2"),
-  ]);
+  ObservableList<FlashCardModel> cardsList = ObservableList.of(ENGLISH_FLASHCARD);
 
   @computed
   FlashCardModel get topCard => cardsList.first;
@@ -36,7 +30,7 @@ abstract class _HomeViewModelBase with Store {
   markAsForgotten() {
     var a = cardsList.first;
     cardsList.removeAt(0);
-    cardsList.insert(cardsList.length, a);
+    cardsList.insert(cardsList.length~/10, a);
     log('Dislike');
   }
 

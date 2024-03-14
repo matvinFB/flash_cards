@@ -21,7 +21,6 @@ class SupabaseService {
         }
       ]).select();
     } catch (e) {
-      print(e);
       return null;
     }
 
@@ -42,7 +41,7 @@ class SupabaseService {
               })
           .toList());
     } catch (e) {
-      print(e);
+      return;
     }
   }
 
@@ -58,5 +57,16 @@ class SupabaseService {
     }
 
     return response;
+  }
+
+  static Future<void> logout() async {
+    final SupabaseClient supabase = GetIt.I.get<SupabaseClient>();
+    try {
+      await supabase.auth.signOut();
+    } catch (e) {
+      return;
+    }
+
+    return;
   }
 }

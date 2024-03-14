@@ -1,8 +1,9 @@
-import 'package:flash_app/services/supabase/supabase.service.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mobx/mobx.dart';
 
-import '../../repositories/auth_repo/auth.repo.dart';
+import '../../../repositories/auth_repo/auth.repo.dart';
+
+
 part 'login.viewmodel.g.dart';
 
 class LoginViewmodel = _LoginViewmodelBase with _$LoginViewmodel;
@@ -43,6 +44,14 @@ abstract class _LoginViewmodelBase with Store {
 
   @action
   Future<bool> login() async {
+    _waitingLogin = true;
+    AuthRepo authRepo = GetIt.I.get<AuthRepo>();
+    bool response = await authRepo.login(email: _email, password: _password);
+    _waitingLogin = false;
+    return response;
+  }
+
+  Future<bool> logout() async {
     _waitingLogin = true;
     AuthRepo authRepo = GetIt.I.get<AuthRepo>();
     bool response = await authRepo.login(email: _email, password: _password);

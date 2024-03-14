@@ -31,4 +31,11 @@ abstract class _AuthRepoBase with Store {
 
     return false;
   }
+
+  @action
+  Future<void> logout() async{
+    await SupabaseService.logout();
+
+    return;
+  }
 }
