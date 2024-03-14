@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     )),
               );
-            }),
+            },),
             const SizedBox(
               height: 16,
             ),
@@ -87,6 +87,7 @@ class LoginScreen extends StatelessWidget {
               builder: (context) {
                 return IconButton(
                   onPressed: () {
+                    if (loginScreenViewmodel.waitingLogin) return;
                     loginScreenViewmodel.login().then(
                       (value) {
                         if (value) {
