@@ -22,8 +22,8 @@ class Home extends StatelessWidget {
                 gesturesRepository.startGesture(DateTime.now(), event.position),
             onPointerMove: (event) =>
                 gesturesRepository.addPointToGesture(event.position),
-            onPointerUp: (event) =>
-                gesturesRepository.finishGesture(DateTime.now(), event.position),
+            onPointerUp: (event) => gesturesRepository.finishGesture(
+                DateTime.now(), event.position),
             child: Scaffold(
               backgroundColor: Colors.white,
               body: Observer(
@@ -46,18 +46,39 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
-                Positioned(
-                  top: 16,
-                  right: 24,
-                  child: IconButton(
-                              onPressed: () {
-                  final loginScreenViewmodel = GetIt.I.get<LoginViewmodel>();
-                  loginScreenViewmodel
-                      .logout()
-                      .then((value) => Navigator.of(context).pop());
-                              },
-                              icon: const Icon(Icons.logout)),
-                ),
+          Positioned(
+            top: 16,
+            right: 24,
+            child: IconButton(
+              onPressed: () {
+                final loginScreenViewmodel = GetIt.I.get<LoginViewmodel>();
+                loginScreenViewmodel.logout().then(
+                  (value) {
+                    controller.resetTotalViewdCards();
+                    Navigator.of(context).pop();
+                  },
+                );
+              },
+              icon: const Icon(Icons.logout),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Observer(builder: (context) {
+                return Text(
+                  "Cartão aprendidos/revisados: ${controller.totalViewdCards}",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.w400),
+                );
+              }),
+            ),
+          )
         ],
       ),
     );
