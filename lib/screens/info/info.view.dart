@@ -82,7 +82,7 @@ class InfoScreen extends StatelessWidget {
             ),
             const GestureCard(
               imagePath: "assets/images/down.png",
-              description: "Deslize para cima caso não tenha conseguido",
+              description: "Deslize para baixo caso não tenha conseguido",
             ),
             const SizedBox(
               height: 24,
