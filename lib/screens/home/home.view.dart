@@ -6,6 +6,7 @@ import '../../repositories/gestures_repo/gestures.repo.dart';
 import '../login/viewmodel/login.viewmodel.dart';
 import 'flash_card/flashcard.widget.dart';
 import 'viewmodel/home.viewmodel.dart';
+import 'widget/background.widgert.dart';
 
 class Home extends StatelessWidget {
   final HomeViewModel controller = GetIt.I.get<HomeViewModel>();
@@ -17,6 +18,7 @@ class Home extends StatelessWidget {
     return SafeArea(
       child: Stack(
         children: [
+          BlinkingContainer(),
           Listener(
             onPointerDown: (event) =>
                 gesturesRepository.startGesture(DateTime.now(), event.position),
@@ -25,7 +27,7 @@ class Home extends StatelessWidget {
             onPointerUp: (event) => gesturesRepository.finishGesture(
                 DateTime.now(), event.position),
             child: Scaffold(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.transparent,
               body: Observer(
                 builder: (context) {
                   return Stack(
