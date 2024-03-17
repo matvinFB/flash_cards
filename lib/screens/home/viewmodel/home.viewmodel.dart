@@ -1,8 +1,18 @@
+import 'dart:io';
+
 import 'package:mobx/mobx.dart';
 
 import '../flash_card/model/flashcard.model.dart';
 import 'flashcard_list.dart';
 part 'home.viewmodel.g.dart';
+
+
+enum BackgroundState {
+  remember,
+  forgot,
+  none
+}
+
 
 class HomeViewModel = _HomeViewModelBase with _$HomeViewModel;
 
@@ -22,6 +32,7 @@ abstract class _HomeViewModelBase with Store {
     var a = cardsList.first;
     cardsList.removeAt(0);
     cardsList.insert(cardsList.length, a);
+    blinkBackground(BackgroundState.remember);
   }
 
   @action
@@ -29,6 +40,7 @@ abstract class _HomeViewModelBase with Store {
     var a = cardsList.first;
     cardsList.removeAt(0);
     cardsList.insert(cardsList.length ~/ 5, a);
+    blinkBackground(BackgroundState.forgot);
   }
 
   @observable
@@ -60,4 +72,18 @@ abstract class _HomeViewModelBase with Store {
     _topCardColorIndex = _secondCardColorIndex;
     _secondCardColorIndex = newIndex;
   }
+
+  @observable
+  BackgroundState _currentState = BackgroundState.none;
+
+  @computed
+  BackgroundState get currentState => _currentState;
+
+  @action
+  Future<void> blinkBackground(BackgroundState value) async{
+    _currentState = value;
+    await Future.delayed(const Duration(milliseconds: 500));
+    _currentState = BackgroundState.none;
+  }
+  
 }

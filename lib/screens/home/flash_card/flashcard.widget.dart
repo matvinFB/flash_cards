@@ -55,18 +55,20 @@ class FlashCard extends StatelessWidget {
         if (controller.verticalHeight > 80 && controller.verticalHeight > 0) {
           viewModelController.markAsForgotten();
           viewModelController.incrementTotalViewdCards();
+          viewModelController.blinkBackground(BackgroundState.forgot);
           pickNewCardColor();
         }
         if (controller.verticalHeight < -80 && controller.verticalHeight < 0) {
           viewModelController.markAsRemembered();
           viewModelController.incrementTotalViewdCards();
+          viewModelController.blinkBackground(BackgroundState.remember);
           pickNewCardColor();
         }
         controller.setVerticalAngle(0);
         controller.setVerticalHeight(0);
       },
       child: Observer(builder: (context) {
-        final screenSize = MediaQuery.of(context).size; 
+        final screenSize = MediaQuery.of(context).size;
         return Transform(
           transform: Matrix4.identity()
             ..setEntry(3, 2, 0.0002)
@@ -107,7 +109,11 @@ class FlashCard extends StatelessWidget {
                         child: Text(
                           controller.isFlipped ? backText : frontText,
                           style: TextStyle(
-                            fontSize: 24 * (math.sqrt(math.pow(screenSize.height*1.7, 2)+math.pow(screenSize.width/1.7,2))/880.92),
+                            fontSize: 24 *
+                                (math.sqrt(math.pow(
+                                            screenSize.height * 1.7, 2) +
+                                        math.pow(screenSize.width / 1.7, 2)) /
+                                    880.92),
                           ),
                         ),
                       ),
