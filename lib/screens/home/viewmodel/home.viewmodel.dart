@@ -44,6 +44,15 @@ abstract class _HomeViewModelBase with Store {
   }
 
   @observable
+  bool _userWantToContinue = false;
+
+  @computed
+  bool get userWantToContinue => _userWantToContinue;
+
+  @action
+  void setUserWantToContinue(bool newValue) => _userWantToContinue = newValue;
+
+  @observable
   int _topCardColorIndex = 0;
 
   @observable

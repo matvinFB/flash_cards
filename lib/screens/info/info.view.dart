@@ -85,10 +85,20 @@ class InfoScreen extends StatelessWidget {
               description: "Deslize para baixo caso não tenha conseguido",
             ),
             const SizedBox(
+              height: 8,
+            ),
+            const GestureCard(
+              imagePath: "assets/images/100.png",
+              description: "Aprenda ou revise 100 cartas para concluir",
+            ),
+            const SizedBox(
               height: 24,
             ),
             GestureDetector(
-              onTap: () => Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Home(),)),
+              onTap: () =>
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) => Home(),
+              )),
               child: Container(
                 height: 48,
                 decoration: BoxDecoration(
@@ -100,10 +110,11 @@ class InfoScreen extends StatelessWidget {
                   child: Text(
                     "Ir para o App",
                     style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        height: 1.4),
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      height: 1.4,
+                    ),
                   ),
                 ),
               ),
