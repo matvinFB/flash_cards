@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:mobx/mobx.dart';
 
 import '../flash_card/model/flashcard.model.dart';

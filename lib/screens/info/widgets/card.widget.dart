@@ -16,24 +16,26 @@ class GestureCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: Colors.grey.shade300, width: 1),
           color: Colors.white),
-      child: Row(children: [
-        Image.asset(
-          imagePath,
-          height: 40,
-        ),
-        const SizedBox(
-          width: 16,
-        ),
-        Flexible(
-          child: Text(
-           description,
-            style: TextStyle(
-                fontSize: 14,
-                color: Colors.blueGrey.shade700,
-                fontWeight: FontWeight.w400),
+      child: Row(
+        children: [
+          Image.asset(
+            imagePath,
+            height: 40,
           ),
-        ),
-      ]),
+          const SizedBox(
+            width: 16,
+          ),
+          Flexible(
+            child: Text(
+              description,
+              style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.blueGrey.shade700,
+                  fontWeight: FontWeight.w400),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
