@@ -1,4 +1,5 @@
 import 'package:flash_app/screens/home/home.view.dart';
+import 'package:flash_app/screens/terms_of_use/termes_of_use_button.widget.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/card.widget.dart';
@@ -94,11 +95,13 @@ class InfoScreen extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
+            const TermsOfUseButton(),
             GestureDetector(
-              onTap: () =>
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => Home(),
-              )),
+              onTap: () => Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => Home(),
+                ),
+              ),
               child: Container(
                 height: 48,
                 decoration: BoxDecoration(

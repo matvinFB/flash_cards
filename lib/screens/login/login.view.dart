@@ -46,40 +46,43 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            Observer(builder: (context) {
-              return SizedBox(
-                height: 60.0,
-                width: double.infinity,
-                child: TextField(
-                    onChanged: (value) =>
-                        loginScreenViewmodel.updatePassword(value),
-                    obscureText: loginScreenViewmodel.hidePassword,
-                    decoration: InputDecoration(
-                      label: const Text("Senha"),
-                      labelStyle: const TextStyle(color: Colors.black),
-                      suffix: IconButton(
-                        onPressed: loginScreenViewmodel.switchPasswordObscurity,
-                        icon: Icon(
-                          loginScreenViewmodel.hidePassword
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                          color: Colors.black,
-                          size: 20,
+            Observer(
+              builder: (context) {
+                return SizedBox(
+                  height: 60.0,
+                  width: double.infinity,
+                  child: TextField(
+                      onChanged: (value) =>
+                          loginScreenViewmodel.updatePassword(value),
+                      obscureText: loginScreenViewmodel.hidePassword,
+                      decoration: InputDecoration(
+                        label: const Text("Senha"),
+                        labelStyle: const TextStyle(color: Colors.black),
+                        suffix: IconButton(
+                          onPressed:
+                              loginScreenViewmodel.switchPasswordObscurity,
+                          icon: Icon(
+                            loginScreenViewmodel.hidePassword
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Colors.black,
+                            size: 20,
+                          ),
                         ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.grey, width: 2),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.grey, width: 1),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    )),
-              );
-            },),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              const BorderSide(color: Colors.grey, width: 2),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide:
+                              const BorderSide(color: Colors.grey, width: 1),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      )),
+                );
+              },
+            ),
             const SizedBox(
               height: 16,
             ),
@@ -115,7 +118,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 );
               },
-            )
+            ),
           ],
         ),
       ),

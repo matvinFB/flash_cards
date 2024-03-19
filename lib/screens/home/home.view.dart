@@ -1,3 +1,4 @@
+import 'package:flash_app/screens/terms_of_use/termes_of_use_button.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
@@ -108,6 +109,10 @@ class _HomeState extends State<Home> {
                 );
               }),
             ),
+          ),
+          const Align(
+            alignment: Alignment.topCenter,
+            child: TermsOfUseButton(),
           )
         ],
       ),
