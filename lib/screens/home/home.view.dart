@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
     super.initState();
     autorun(
       (p0) {
-        if (controller.totalViewdCards >= 1 && !controller.userWantToContinue) {
+        if (controller.totalViewdCards >= 100 && !controller.userWantToContinue) {
           Future.delayed(const Duration(milliseconds: 200)).then(
             (value) => showDialog(
               context: context,
@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           Align(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.topCenter,
             child: Padding(
               padding: const EdgeInsets.all(14),
               child: Observer(builder: (context) {
@@ -111,7 +111,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           const Align(
-            alignment: Alignment.topCenter,
+            alignment: Alignment.bottomCenter,
             child: TermsOfUseButton(),
           )
         ],
