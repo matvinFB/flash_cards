@@ -13,7 +13,7 @@ import 'widget/background.widget.dart';
 import 'widget/finish_message.widget.dart';
 
 class Home extends StatefulWidget {
-  Home({super.key});
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();

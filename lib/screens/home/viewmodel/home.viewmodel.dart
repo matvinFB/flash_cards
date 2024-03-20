@@ -4,13 +4,7 @@ import '../flash_card/model/flashcard.model.dart';
 import 'flashcard_list.dart';
 part 'home.viewmodel.g.dart';
 
-
-enum BackgroundState {
-  remember,
-  forgot,
-  none
-}
-
+enum BackgroundState { remember, forgot, none }
 
 class HomeViewModel = _HomeViewModelBase with _$HomeViewModel;
 
@@ -87,10 +81,5 @@ abstract class _HomeViewModelBase with Store {
   BackgroundState get currentState => _currentState;
 
   @action
-  Future<void> blinkBackground(BackgroundState value) async{
-    _currentState = value;
-    await Future.delayed(const Duration(milliseconds: 500));
-    _currentState = BackgroundState.none;
-  }
-  
+  void blinkBackground(BackgroundState value) => _currentState = value;
 }
