@@ -1,11 +1,39 @@
 import 'package:flash_app/screens/home/home.view.dart';
-import 'package:flash_app/screens/terms_of_use/termes_of_use_button.widget.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../terms_of_use/terms_of_use.view.dart';
 import 'widgets/card.widget.dart';
 
-class InfoScreen extends StatelessWidget {
+class InfoScreen extends StatefulWidget {
   const InfoScreen({super.key});
+
+  @override
+  State<InfoScreen> createState() => _InfoScreenState();
+}
+
+class _InfoScreenState extends State<InfoScreen> {
+  bool _termsOfUseChecked = false;
+  late TapGestureRecognizer _termsOfUseRecognizer;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _termsOfUseRecognizer = TapGestureRecognizer()
+      ..onTap = () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const TermsOfUse(),
+            ),
+          );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    _termsOfUseRecognizer.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,13 +123,58 @@ class InfoScreen extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
-            const TermsOfUseButton(),
             GestureDetector(
-              onTap: () => Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  builder: (context) => Home(),
-                ),
+              onTap: () {
+                setState(() {
+                  _termsOfUseChecked = !_termsOfUseChecked;
+                });
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    _termsOfUseChecked
+                        ? Icons.check_box_outlined
+                        : Icons.check_box_outline_blank,
+                    size: 24,
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: "Li e concordo com os ",
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Color.fromRGBO(69, 90, 100, 1),
+                        fontWeight: FontWeight.w400,
+                      ),
+                      children: [
+                        TextSpan(
+                            text: "Termos de Uso",
+                            style: const TextStyle(
+                                color: Color.fromRGBO(69, 90, 100, 1),
+                                fontWeight: FontWeight.w500),
+                            recognizer: _termsOfUseRecognizer),
+                      ],
+                    ),
+                  ),
+                ],
               ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            GestureDetector(
+              onTap: () {
+                if (_termsOfUseChecked) {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => const Home(),
+                    ),
+                  );
+                }
+              },
               child: Container(
                 height: 48,
                 decoration: BoxDecoration(
@@ -121,7 +194,32 @@ class InfoScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            GestureDetector(
+              onTap: () => Navigator.of(context).pop(),
+              child: Container(
+                height: 48,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.grey.shade200, width: 1),
+                  color: Colors.grey.shade100,
+                ),
+                child: Center(
+                  child: Text(
+                    "Voltar",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.blueGrey.shade600,
+                      fontWeight: FontWeight.w400,
+                      height: 1.4,
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
