@@ -8,6 +8,21 @@ class TermsOfUse extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
+        title: const Text(
+          "Termos de Uso",
+          style: TextStyle(
+            fontSize: 24,
+            color: Color.fromRGBO(69, 90, 100, 1),
+          ),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () => Navigator.of(context).pop(),
+          icon: const Icon(Icons.arrow_back),
+        ),
+      ),
       body: ListView(
         shrinkWrap: true,
         padding: const EdgeInsets.all(24.0),
@@ -20,19 +35,22 @@ class TermsOfUse extends StatelessWidget {
               fontWeight: FontWeight.w400,
             ),
           ),
-          const SizedBox(height: 32,),
+          const SizedBox(
+            height: 32,
+          ),
           GestureDetector(
             onTap: () => Navigator.of(context).pop(),
             child: Container(
               height: 48,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: const Color.fromRGBO(224, 224, 224, 1), width: 1),
+                border: Border.all(
+                    color: const Color.fromRGBO(224, 224, 224, 1), width: 1),
                 color: const Color.fromRGBO(84, 110, 122, 1),
               ),
               child: const Center(
                 child: Text(
-                  "Ir para o App",
+                  "Voltar",
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.white,
