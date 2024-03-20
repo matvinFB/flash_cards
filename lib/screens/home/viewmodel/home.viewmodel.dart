@@ -24,7 +24,6 @@ abstract class _HomeViewModelBase with Store {
     var a = cardsList.first;
     cardsList.removeAt(0);
     cardsList.insert(cardsList.length, a);
-    blinkBackground(BackgroundState.remember);
   }
 
   @action
@@ -32,7 +31,6 @@ abstract class _HomeViewModelBase with Store {
     var a = cardsList.first;
     cardsList.removeAt(0);
     cardsList.insert(cardsList.length ~/ 5, a);
-    blinkBackground(BackgroundState.forgot);
   }
 
   @observable
@@ -75,11 +73,11 @@ abstract class _HomeViewModelBase with Store {
   }
 
   @observable
-  BackgroundState _currentState = BackgroundState.none;
+  BackgroundState _currentBackgroundState = BackgroundState.none;
 
   @computed
-  BackgroundState get currentState => _currentState;
+  BackgroundState get currentBackgroundState => _currentBackgroundState;
 
   @action
-  void blinkBackground(BackgroundState value) => _currentState = value;
+  void setCurrentBackgroundState(BackgroundState value) => _currentBackgroundState = value;
 }
