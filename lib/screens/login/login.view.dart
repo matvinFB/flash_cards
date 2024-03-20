@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
+import '../terms_of_use/termes_of_use_button.widget.dart';
 import 'viewmodel/login.viewmodel.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -52,34 +53,34 @@ class LoginScreen extends StatelessWidget {
                   height: 60.0,
                   width: double.infinity,
                   child: TextField(
-                      onChanged: (value) =>
-                          loginScreenViewmodel.updatePassword(value),
-                      obscureText: loginScreenViewmodel.hidePassword,
-                      decoration: InputDecoration(
-                        label: const Text("Senha"),
-                        labelStyle: const TextStyle(color: Colors.black),
-                        suffix: IconButton(
-                          onPressed:
-                              loginScreenViewmodel.switchPasswordObscurity,
-                          icon: Icon(
-                            loginScreenViewmodel.hidePassword
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                            color: Colors.black,
-                            size: 20,
-                          ),
+                    onChanged: (value) =>
+                        loginScreenViewmodel.updatePassword(value),
+                    obscureText: loginScreenViewmodel.hidePassword,
+                    decoration: InputDecoration(
+                      label: const Text("Senha"),
+                      labelStyle: const TextStyle(color: Colors.black),
+                      suffix: IconButton(
+                        onPressed: loginScreenViewmodel.switchPasswordObscurity,
+                        icon: Icon(
+                          loginScreenViewmodel.hidePassword
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.black,
+                          size: 20,
                         ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 2),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 1),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      )),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 2),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide:
+                            const BorderSide(color: Colors.grey, width: 1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  ),
                 );
               },
             ),
@@ -119,6 +120,7 @@ class LoginScreen extends StatelessWidget {
                 );
               },
             ),
+            const TermsOfUseButton(),
           ],
         ),
       ),
