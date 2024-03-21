@@ -8,41 +8,41 @@ import '../../repositories/auth_repo/auth.repo.dart';
 
 class SupabaseService {
   static Future<int?> insertGesture(Gesture gesture, String deviceID) async {
-    // final SupabaseClient supabase = GetIt.I.get<SupabaseClient>();
-    // AuthRepo authRepo = GetIt.I.get<AuthRepo>();
-    // final List<Map<String, dynamic>> gestureResponse;
-    // try {
-    //   gestureResponse = await supabase.from('Gesture').insert([
-    //     {
-    //       'device_id': deviceID,
-    //       'gesture_start': gesture.start.toIso8601String(),
-    //       'gesture_end': gesture.end.toIso8601String(),
-    //       'user_id': authRepo.user?.id ?? ""
-    //     }
-    //   ]).select();
-    // } catch (e) {
-    //   return null;
-    // }
+    final SupabaseClient supabase = GetIt.I.get<SupabaseClient>();
+    AuthRepo authRepo = GetIt.I.get<AuthRepo>();
+    final List<Map<String, dynamic>> gestureResponse;
+    try {
+      gestureResponse = await supabase.from('Gesture').insert([
+        {
+          'device_id': deviceID,
+          'gesture_start': gesture.start.toIso8601String(),
+          'gesture_end': gesture.end.toIso8601String(),
+          'user_id': authRepo.user?.id ?? ""
+        }
+      ]).select();
+    } catch (e) {
+      return null;
+    }
 
-    // if (gestureResponse.isEmpty) return null;
+    if (gestureResponse.isEmpty) return null;
 
-    // return gestureResponse.first['id'];
+    return gestureResponse.first['id'];
   }
 
   static Future<void> insertPoints(
       List<Point> trajectory, int gestureID) async {
-    // final SupabaseClient supabase = GetIt.I.get<SupabaseClient>();
-    // try {
-    //   await supabase.from('Points').insert(trajectory
-    //       .map((e) => {
-    //             'gestureID': gestureID,
-    //             'x_coordinate': e.x,
-    //             'y_coordinate': e.y
-    //           })
-    //       .toList());
-    // } catch (e) {
-    //   return;
-    // }
+    final SupabaseClient supabase = GetIt.I.get<SupabaseClient>();
+    try {
+      await supabase.from('Points').insert(trajectory
+          .map((e) => {
+                'gestureID': gestureID,
+                'x_coordinate': e.x,
+                'y_coordinate': e.y
+              })
+          .toList());
+    } catch (e) {
+      return;
+    }
   }
 
   static Future<AuthResponse?> login(
