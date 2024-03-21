@@ -1,35 +1,34 @@
 
-const termsOfUse = """Termo de Consentimento para Uso do Aplicativo "Flashcards"
+const termsOfUse = """TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO (TCLE)
 
-Prezado(a) Usuário(a),
+Você está sendo convidado(a) como voluntário(a) a participar da pesquisa: “USO DE DYNAMIC TIME WARPING NA VALIDAÇÃO DE IDENTIDADE DE USUÁRIOS DE SMARTPHONES”, que tem como objetivo avaliar o uso de Dynamic Time Warping para validação de identidade. Você não deve participar contra a sua vontade. Leia atentamente as informações abaixo e faça qualquer pergunta que desejar, para que todos os procedimentos desta pesquisa sejam esclarecidos.
 
-Obrigado por seu interesse e disposição de usar o aplicativo "Flashcards". Este aplicativo foi desenvolvido como parte do Trabalho de Conclusão de Curso de Matheus Vinícius Fernandes Barros intitulado "USO DE DYNAMIC TIME WARPING NA VALIDAÇÃO DE IDENTIDADE DE USUÁRIOS DE SMARTPHONES".
+Participação no estudo – A sua participação no estudo será voluntária e consiste em utilizar o aplicativo "Flashcards" de maneira individual, em um dispositivo móvel, preferencialmente um smartphone, com o objetivo de atingir a pontuação de 100 cartas. Todo o processo de uso deve durar em torno de 15 minutos. Os gestos capturados pela tela do dispositivo móvel serão armazenados.
 
-Ao usar este aplicativo, você concorda com os seguintes termos:
+Riscos e benefícios – A pesquisa não apresenta riscos substanciais para os participantes. Ainda assim, estes podem apresentar fadiga ou desinteresse ao utilizar o aplicativo. Por isso, o participante pode interromper o uso a qualquer momento, mesmo antes de atingir a pontuação sugerida. Como benefícios, o participante terá a possibilidade de aprender e revisar vocabulário em inglês, além do mais estará contribuindo com a área de segurança da informação já que seus dados serão utilizados para responder perguntas da área.
 
-Dados Coletados:
-O aplicativo coleta os seguintes dados:
-    • Dados de interação com a tela do dispositivo: como cliques, arrastos, movimentos de pinça e quaisquer outros gestos usados ao interagir com a tela.
-    • Dados de dispositivo: como o tipo de dispositivo que você usa, a versão do sistema operacional e o idioma.
+Sigilo e privacidade – A sua privacidade é prioridade e será respeitada. Durante o uso do aplicativo nenhum dado que possa identificar o usuário será coletado. Além disso, os pesquisadores se responsabilizam pela guarda e confidencialidade de todos os dados. 
 
-Uso dos Dados:
-Os dados coletados serão usados para:
-    • Melhorar o aplicativo;
-    • Realizar pesquisas;
-    • Publicar artigos científicos ou apresentações.
+Autonomia – Você pode se recusar a participar do estudo ou retirar seu consentimento a qualquer momento, sem precisar justificar. Não haverá qualquer penalidade ou perda de benefícios ao retirar-se da pesquisa. Para retirar o seu consentimento, basta solicitar durante o convite de participação da entrevista ou pelo email ou telefone informados ao final deste documento.
 
-Anonimização:
-Todos os dados coletados serão anonimizados, o que significa que você não poderá ser identificado(a).
+Remuneração – Não haverá despesas pessoais em qualquer fase da pesquisa, nem compensação financeira relacionada à sua participação.
 
-Consentimento:
-O uso deste aplicativo é voluntário. Você pode desinstalar o aplicativo a qualquer momento.
+Declaração de responsabilidade – Os pesquisadores responsáveis, Matheus Vinícius Fernandes Barros (graduando da Universidade Federal do Ceará) e Arthur de Castro Callado, professor da Universidade Federal do Ceará, campus de Quixadá, declaram cumprir as exigências da RESOLUÇÃO Nº 466, DE 12 DE DEZEMBRO DE 2012, e suas complementares, do Conselho Nacional de Saúde, que trata dos cuidados éticos de pesquisas científicas envolvendo pessoas.
 
-Contato:
-Se você tiver alguma dúvida sobre este aplicativo, por favor, entre em contato com Matheus Vinícius Fernandes Barros pelo e-mail matheusviniciusf@alu.ufc.br.
+Contato – Em caso de dúvidas, solicitações ou notificação de acontecimentos não previstos, você poderá contatar os pesquisadores responsáveis, Diogo Nazareno, pelo e-mail matheusviniciusf@alu.ufc.br ou arthur@ufc.br.
 
-Ao usar este aplicativo, você declara que leu e concorda com os termos acima.
+Dados dos responsáveis pela pesquisa:
 
-Matheus Vinícius Fernandes Barros
-Discente
-Universidade Federal do Ceará
-18 de março de 2024""";
+Nome: Matheus Vinícius Fernandes Barros
+Instituição: Universidade Federal do Ceará (UFC)
+Endereço: Av. José de Freitas Queiroz, 5003 - Quixadá, CE, 63902-580
+e-mail: matheusviniciusf@alu.ufc.br
+
+Nome: Arthur de Castro Callado
+Instituição: Universidade Federal do Ceará (UFC)
+Endereço: Av. José de Freitas Queiroz, 5003 - Quixadá, CE, 63902-580
+e-mail: arthur@ufc.br
+
+ATENÇÃO: Se você tiver alguma consideração ou dúvida, sobre a sua participação na pesquisa, entre em contato com o Comitê de Ética em Pesquisa da UFC/PROPESQ – Rua Coronel Nunes de Melo, 1000 - Rodolfo Teófilo, fone: 3366-8344/46. (Horário: 08:00-12:00 horas de segunda a sexta-feira).
+O CEP/UFC/PROPESQ é a instância da Universidade Federal do Ceará responsável pela avaliação e acompanhamento dos aspectos éticos de todas as pesquisas envolvendo seres humanos.
+""";

@@ -11,7 +11,7 @@ class TermsOfUse extends StatelessWidget {
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         title: const Text(
-          "Termos de Uso",
+          "TCLE",
           style: TextStyle(
             fontSize: 24,
             color: Color.fromRGBO(69, 90, 100, 1),
