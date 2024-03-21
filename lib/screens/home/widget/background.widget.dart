@@ -8,19 +8,23 @@ import '../viewmodel/home.viewmodel.dart';
 // ignore: must_be_immutable
 class BlinkingContainer extends StatelessWidget {
 
-  HomeViewModel flashCardsController = GetIt.I.get<HomeViewModel>();
+  final HomeViewModel flashCardsController = GetIt.I.get<HomeViewModel>();
+
+  BlinkingContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Observer(
       builder: (_) {
         return AnimatedContainer(
-          duration: const Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 300),
+          curve: flashCardsController.currentBackgroundState == BackgroundState.none ?  Curves.easeIn : Curves.easeOut,
+          onEnd: () => flashCardsController.setCurrentBackgroundState(BackgroundState.none),
           height: double.infinity,
           width: double.infinity,
-          color: flashCardsController.currentState == BackgroundState.none
+          color: flashCardsController.currentBackgroundState == BackgroundState.none
               ? Colors.white
-              : flashCardsController.currentState == BackgroundState.remember
+              : flashCardsController.currentBackgroundState == BackgroundState.remember
                   ? const Color.fromRGBO(193, 225, 193, 1)
                   : const Color.fromRGBO(249,150,150, 1),
         );

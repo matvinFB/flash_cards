@@ -1,3 +1,4 @@
+import 'package:flash_app/screens/terms_of_use/termes_of_use_button.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
@@ -12,7 +13,7 @@ import 'widget/background.widget.dart';
 import 'widget/finish_message.widget.dart';
 
 class Home extends StatefulWidget {
-  Home({super.key});
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -28,7 +29,7 @@ class _HomeState extends State<Home> {
     super.initState();
     autorun(
       (p0) {
-        if (controller.totalViewdCards >= 1 && !controller.userWantToContinue) {
+        if (controller.totalViewdCards >= 100 && !controller.userWantToContinue) {
           Future.delayed(const Duration(milliseconds: 200)).then(
             (value) => showDialog(
               context: context,
@@ -93,7 +94,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           Align(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.topCenter,
             child: Padding(
               padding: const EdgeInsets.all(14),
               child: Observer(builder: (context) {
@@ -108,6 +109,10 @@ class _HomeState extends State<Home> {
                 );
               }),
             ),
+          ),
+          const Align(
+            alignment: Alignment.bottomCenter,
+            child: TermsOfUseButton(),
           )
         ],
       ),
