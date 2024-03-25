@@ -28,7 +28,4 @@ Nome: Arthur de Castro Callado
 Instituição: Universidade Federal do Ceará (UFC)
 Endereço: Av. José de Freitas Queiroz, 5003 - Quixadá, CE, 63902-580
 e-mail: arthur@ufc.br
-
-ATENÇÃO: Se você tiver alguma consideração ou dúvida, sobre a sua participação na pesquisa, entre em contato com o Comitê de Ética em Pesquisa da UFC/PROPESQ – Rua Coronel Nunes de Melo, 1000 - Rodolfo Teófilo, fone: 3366-8344/46. (Horário: 08:00-12:00 horas de segunda a sexta-feira).
-O CEP/UFC/PROPESQ é a instância da Universidade Federal do Ceará responsável pela avaliação e acompanhamento dos aspectos éticos de todas as pesquisas envolvendo seres humanos.
 """;
