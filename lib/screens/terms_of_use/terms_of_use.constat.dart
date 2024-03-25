@@ -13,22 +13,7 @@ Autonomia – Você pode se recusar a participar do estudo ou retirar seu consen
 
 Remuneração – Não haverá despesas pessoais em qualquer fase da pesquisa, nem compensação financeira relacionada à sua participação.
 
-Declaração de responsabilidade – Os pesquisadores responsáveis, Matheus Vinícius Fernandes Barros (graduando da Universidade Federal do Ceará) e Arthur de Castro Callado, professor da Universidade Federal do Ceará, campus de Quixadá, declaram cumprir as exigências da RESOLUÇÃO Nº 466, DE 12 DE DEZEMBRO DE 2012, e suas complementares, do Conselho Nacional de Saúde, que trata dos cuidados éticos de pesquisas científicas envolvendo pessoas.
+Declaração de responsabilidade – Os pesquisadores responsáveis, Matheus Vinícius Fernandes Barros, graduando da Universidade Federal do Ceará, campus de Quixadá, declara cumprir as exigências da RESOLUÇÃO Nº 466, DE 12 DE DEZEMBRO DE 2012, e suas complementares, do Conselho Nacional de Saúde, que trata dos cuidados éticos de pesquisas científicas envolvendo pessoas.
 
-Contato – Em caso de dúvidas, solicitações ou notificação de acontecimentos não previstos, você poderá contatar os pesquisadores responsáveis, Diogo Nazareno, pelo e-mail matheusviniciusf@alu.ufc.br ou arthur@ufc.br.
-
-Dados dos responsáveis pela pesquisa:
-
-Nome: Matheus Vinícius Fernandes Barros
-Instituição: Universidade Federal do Ceará (UFC)
-Endereço: Av. José de Freitas Queiroz, 5003 - Quixadá, CE, 63902-580
-e-mail: matheusviniciusf@alu.ufc.br
-
-Nome: Arthur de Castro Callado
-Instituição: Universidade Federal do Ceará (UFC)
-Endereço: Av. José de Freitas Queiroz, 5003 - Quixadá, CE, 63902-580
-e-mail: arthur@ufc.br
-
-ATENÇÃO: Se você tiver alguma consideração ou dúvida, sobre a sua participação na pesquisa, entre em contato com o Comitê de Ética em Pesquisa da UFC/PROPESQ – Rua Coronel Nunes de Melo, 1000 - Rodolfo Teófilo, fone: 3366-8344/46. (Horário: 08:00-12:00 horas de segunda a sexta-feira).
-O CEP/UFC/PROPESQ é a instância da Universidade Federal do Ceará responsável pela avaliação e acompanhamento dos aspectos éticos de todas as pesquisas envolvendo seres humanos.
+Contato – Em caso de dúvidas, solicitações ou notificação de acontecimentos não previstos, você poderá contatar o pesquisador responsáveis, pelo e-mail matheusviniciusf@alu.ufc.br.
 """;
