@@ -55,13 +55,13 @@ class FlashCard extends StatelessWidget {
         if (controller.verticalHeight > 80 && controller.verticalHeight > 0) {
           viewModelController.markAsForgotten();
           viewModelController.incrementTotalViewdCards();
-          viewModelController.blinkBackground(BackgroundState.forgot);
+          viewModelController.setCurrentBackgroundState(BackgroundState.forgot);
           pickNewCardColor();
         }
         if (controller.verticalHeight < -80 && controller.verticalHeight < 0) {
           viewModelController.markAsRemembered();
           viewModelController.incrementTotalViewdCards();
-          viewModelController.blinkBackground(BackgroundState.remember);
+          viewModelController.setCurrentBackgroundState(BackgroundState.remember);
           pickNewCardColor();
         }
         controller.setVerticalAngle(0);

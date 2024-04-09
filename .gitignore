@@ -52,3 +52,6 @@ pubspec.lock
 linux/flutter/generated_plugins.cmake
 .vscode/launch.json
 .vscode/launch.json
+
+# FVM Version Cache
+.fvm/

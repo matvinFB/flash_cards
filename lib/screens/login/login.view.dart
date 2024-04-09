@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
+import '../terms_of_use/termes_of_use_button.widget.dart';
 import 'viewmodel/login.viewmodel.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -46,11 +47,12 @@ class LoginScreen extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            Observer(builder: (context) {
-              return SizedBox(
-                height: 60.0,
-                width: double.infinity,
-                child: TextField(
+            Observer(
+              builder: (context) {
+                return SizedBox(
+                  height: 60.0,
+                  width: double.infinity,
+                  child: TextField(
                     onChanged: (value) =>
                         loginScreenViewmodel.updatePassword(value),
                     obscureText: loginScreenViewmodel.hidePassword,
@@ -77,9 +79,11 @@ class LoginScreen extends StatelessWidget {
                             const BorderSide(color: Colors.grey, width: 1),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                    )),
-              );
-            },),
+                    ),
+                  ),
+                );
+              },
+            ),
             const SizedBox(
               height: 16,
             ),
@@ -115,7 +119,8 @@ class LoginScreen extends StatelessWidget {
                   ),
                 );
               },
-            )
+            ),
+            const TermsOfUseButton(),
           ],
         ),
       ),
